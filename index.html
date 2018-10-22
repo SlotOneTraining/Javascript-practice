@@ -3,11 +3,58 @@
     <head>
         <TITLE>Javascript Practice</TITLE>
         <link rel="stylesheet" href="main.css" >
+        <script src="main.js"></script>
     </head>
-    <body>
+    <body onload = 'console.log("Az oldal betöltött!!!")'>
 
-        <p>Js sablon</p>
+        <header>
+            <h1 id="heading">Leraning Javascript</h1>
+            <p>Practice 1.</p>
+        </header>
 
-    <script src="app.js"></script>
+        <div class="container">
+            <button onclick="doClick()">Click Me</button>
+            <button onclick="this.innerHTML = 'You Clicked!'">Click Me Again</button> 
+            <button onclick="changeText()">Click Me</button>   
+            <button onclick="clearDate()">Clear Date</button>       
+           
+        </div>
+
+        <div id="hover" onmouseover='showDate()'>
+            <p>Hover me !!!</p>
+        </div>
+
+        <h2 id="time"></h2>
+
+        <hr/>
+
+        <form method="post" action="something.php" name="MyForm" onsubmit="return validateForm()">
+
+            <label>First Name:</label>
+            <input type="text" name="firstName" id="firstName">
+
+            <br />
+            <br />
+
+            <label>Last Name:</label>
+            <input type="text" name="lastName" id="lastName">
+            
+            <br />
+            <br />
+
+            <label>Select Color</label>
+            <select name="background" id="background" onchange="changeBackground(this)">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+            
+            <br />
+            <br />
+
+            <input type="submit" value="Submit">
+
+        </form>
+
     </body>
 </html>
