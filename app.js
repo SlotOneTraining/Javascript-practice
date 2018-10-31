@@ -27,16 +27,28 @@ let card1 = "Ace of Spades",
     //let result = card3.splice(3,2);
     //console.log(result+" a fenn maradt tömb elemei "+ card3);
 
-let decks = [
-    "Ace of Spades",
-    "Two of Spades",
-    "Three of Spades"
-];
-
+/*
 let playerCards = [ decks[0], decks[2] ];
 
 console.log("Welcome to Blackjack Game!");
 console.log("You are dealt: ");
 console.log(" "+ playerCards[0]);
 console.log(" "+ playerCards[1]);
+*/
 
+
+let suits = ['Hearts','Clubs','Diamonds','Spades'];
+let values = ['Ace','King','Queen','Jack',
+              'Ten','Nine','Eight','Seven',
+              'Six','Five','Four','Three','two'];
+
+let deck = [];
+
+for (let suitIndex=0; suitIndex<suits.length; suitIndex++){
+
+    for (let valueIndex=0; valueIndex<values.length; valueIndex++){
+        deck.push(values[valueIndex]+' of '+suits[suitIndex]);
+    }
+}
+
+console.log(deck);
