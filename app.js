@@ -42,13 +42,27 @@ let values = ['Ace','King','Queen','Jack',
               'Ten','Nine','Eight','Seven',
               'Six','Five','Four','Three','two'];
 
-let deck = [];
+function createDeck() {
 
-for (let suitIndex=0; suitIndex<suits.length; suitIndex++){
+   let deck = [];
 
-    for (let valueIndex=0; valueIndex<values.length; valueIndex++){
-        deck.push(values[valueIndex]+' of '+suits[suitIndex]);
+    for (let suitIndex=0; suitIndex<suits.length; suitIndex++) {
+
+        for (let valueIndex=0; valueIndex<values.length; valueIndex++) {
+            deck.push(values[valueIndex]+' of '+suits[suitIndex]);
+        }
     }
+
+    return deck;
 }
 
+function getNextCard() {
+    return deck.shift();
+}
+
+let deck = createDeck();
+let playerCards = [ getNextCard() , getNextCard() ];
+
+
 console.log(deck);
+console.log(playerCards)
