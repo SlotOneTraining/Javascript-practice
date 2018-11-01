@@ -40,10 +40,39 @@ console.log(" "+ playerCards[1]);
 let nan = isNaN(varible)
 console.log(nan)*/
 
+/*var szoveg = document.getElementById('p');
+szoveg.innerText = 'Yo my niggah';
+szoveg.style.color="red";
+
+var button = document.getElementById("ok");
+
+button.addEventListener('click', function() {
+    szoveg.style.display="none";
+    alert("mükszik brah");
+})*/
+
+
+
 let suits = ['Hearts','Clubs','Diamonds','Spades'];
 let values = ['Ace','King','Queen','Jack',
               'Ten','Nine','Eight','Seven',
               'Six','Five','Four','Three','two'];
+
+let textArea = document.getElementById("text-area");
+let newGameButton = document.getElementById("new-game-button");
+let stayButton = document.getElementById("stay-button");
+let hitButton = document.getElementById("hit-button");
+
+hitButton.style.display = "none";
+stayButton.style.display = "none";
+
+newGameButton.addEventListener('click', function() {
+    textArea.innerText = "Started...";
+
+    newGameButton.style.display = "none";
+    hitButton.style.display = "inline-block";
+    stayButton.style.display = "inline-block";
+});
 
 function createDeck() {
 
@@ -80,3 +109,4 @@ let playerCards = [ getNextCard() , getNextCard() ];
 //console.log(deck);
 console.log(getCardString(playerCards[0]));
 console.log(getCardString(playerCards[1]));
+
