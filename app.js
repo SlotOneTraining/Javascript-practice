@@ -36,6 +36,9 @@ console.log(" "+ playerCards[0]);
 console.log(" "+ playerCards[1]);
 */
 
+/*let varible ="w";
+let nan = isNaN(varible)
+console.log(nan)*/
 
 let suits = ['Hearts','Clubs','Diamonds','Spades'];
 let values = ['Ace','King','Queen','Jack',
@@ -49,7 +52,13 @@ function createDeck() {
     for (let suitIndex=0; suitIndex<suits.length; suitIndex++) {
 
         for (let valueIndex=0; valueIndex<values.length; valueIndex++) {
-            deck.push(values[valueIndex]+' of '+suits[suitIndex]);
+            
+            let card = {
+                suit: suits[suitIndex],
+                values: values[valueIndex]
+            }
+
+            deck.push(card);
         }
     }
 
@@ -60,9 +69,14 @@ function getNextCard() {
     return deck.shift();
 }
 
+function getCardString (card) {
+    return card.values +' of '+ card.suit;
+}
+
 let deck = createDeck();
 let playerCards = [ getNextCard() , getNextCard() ];
 
 
-console.log(deck);
-console.log(playerCards)
+//console.log(deck);
+console.log(getCardString(playerCards[0]));
+console.log(getCardString(playerCards[1]));
