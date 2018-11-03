@@ -18,8 +18,8 @@ console.log(document.images);
 // getElementByID //
 
 //console.log(document.getElementById('header-title'));
-var headerTitle = document.getElementById('header-title');
-var header = document.getElementById('main-header');
+//var headerTitle = document.getElementById('header-title');
+//var header = document.getElementById('main-header');
 //console.log(headerTitle);
 //headerTitle.textContent='Hello';
 //headerTitle.innerText='Goodbye'; //Elemben lévő formázásokat felül írja ( span-eket )
@@ -57,6 +57,7 @@ for (var i = 0; i < li.length; i++){
 }*/
 
 // querySelector //
+/*
 var header = document.querySelector('#main-header');
 header.style.borderBottom = 'solid 4px #ccc';
 
@@ -87,4 +88,102 @@ var even = document.querySelectorAll('li:nth-child(even)');
 for ( var i = 0; i<odd.length; i++ ) {
     odd[i].style.backgroundColor = 'gray';
     even[i].style.backgroundColor = 'silver';
-}
+}*/
+
+// Traversing the DOM //
+
+var itemList = document.querySelector('#items');
+
+// parentNode
+/*
+console.log(itemList.parentNode);
+console.log(itemList.parentNode.parentNode);
+itemList.parentNode.style.backgroundColor = 'silver';
+*/
+
+// parentElement
+/*
+console.log(itemList.parentElement);
+console.log(itemList.parentElement.parentElement);
+itemList.parentElement.style.backgroundColor = 'orange';
+*/
+
+// childNodes
+//console.log(itemList.childNodes); -> Ezt a white space-ek miatt nem nagyon használják
+/*
+console.log(itemList.children);
+console.log(itemList.children[1]);
+itemList.children[1].style.color="Yellow"
+*/
+
+//firstChild
+/*
+console.log(itemList.firstChild);
+
+//firstElementChild
+
+console.log(itemList.firstElementChild);
+itemList.firstElementChild.textContent = "Hello";
+*/
+
+//lastChild
+/*
+console.log(itemList.lastChild);
+
+//lastElementChild
+console.log(itemList.lastElementChild);
+itemList.lastElementChild.textContent = "Hello";
+*/
+
+
+//nextSibling
+/*
+console.log(itemList.nextSibling);
+
+// nextElementSibling
+console.log(itemList.nextElementSibling);*/
+
+
+//previousSibling
+/*
+console.log(itemList.previousSibling);
+
+//previousElementSibling
+
+console.log(itemList.previousElementSibling);
+itemList.previousElementSibling.style.color = "green";
+*/
+
+
+// createElement
+
+/////// create a div
+
+var newDiv = document.createElement('div');
+
+// add class
+newDiv.className = 'hello-class';
+
+//add id
+newDiv.id= 'hello-id';
+
+// add attr
+newDiv.setAttribute('title','Hello New Div');
+
+// create text node
+var newDivText = document.createTextNode('Hello Word!');
+
+// add the text to div
+newDiv.appendChild(newDivText);
+
+//add DOM
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+console.log(newDiv);
+
+newDiv.style.fontSize = '30px';
+
+container.insertBefore(newDiv, h1); 
+
+// .insertAfter NINCS !!! az csak jqueryben létrehozott új function();
