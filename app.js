@@ -158,7 +158,7 @@ itemList.previousElementSibling.style.color = "green";
 // createElement
 
 /////// create a div
-
+/*
 var newDiv = document.createElement('div');
 
 // add class
@@ -187,3 +187,104 @@ newDiv.style.fontSize = '30px';
 container.insertBefore(newDiv, h1); 
 
 // .insertAfter NINCS !!! az csak jqueryben létrehozott új function();
+*/
+
+
+//////////////// Events
+
+//Click
+//var button = document.getElementById('button').addEventListener('click', function(){});
+
+/*
+var button = document.getElementById('button').addEventListener('click', buttonClick);
+
+function buttonClick(e) {
+    //alert('Button clicked!');
+    //document.getElementById('header-title').textContent = 'Changed';
+    //document.querySelector('#main').style.backgroundColor = 'silver';
+
+    //console.log(e);
+    //console.log(e.target);
+    //console.log(e.target.id);
+    //console.log(e.target.className);
+    //console.log(e.target.classList);
+
+    /*
+    var output = document.getElementById('output');
+    output.innerHTML = '<h3>'+e.target.id+'</h3>';
+
+    console.log(e.type); //event típusa
+    */
+    
+    /*
+    console.log(e.clientX); // Egész documentumnál figyeli a cursor position-t
+    console.log(e.clientY);
+    console.log(e.offsetX); // Megadott elemntnél figyeli a cursor position-t
+    console.log(e.offsetY);
+    
+
+    console.log(e.altKey);
+    console.log(e.ctrlKey);
+    console.log(e.shiftKey);
+    console.log('-------------');
+} */
+
+var button = document.getElementById('button');
+var box = document.getElementById('box');
+
+//button.addEventListener('click',  runEvent); // 1x click
+//button.addEventListener('dblclick',  runEvent); // 2x cilck
+//button.addEventListener('mousedown',  runEvent);  // lenyomjuk az egeret
+//button.addEventListener('mouseup',  runEvent); // felengedjük a clicket
+
+//box.addEventListener('mouseenter', runEvent); //hover: amikor belebegtetjük a cursort az elembe
+//box.addEventListener('mouseleave', runEvent); //hover: Az elemen belüli child elemek 'belépését érzékeli' ez az event
+//sbox.addEventListener('mouseover', runEvent); //hover: amikor kilebegtetjük a cursort az elemből
+//box.addEventListener('mouseout', runEvent);  //hover: Az elemen belüli child elemek 'kilépését érzékeli' ez az event
+
+//box.addEventListener('mousemove', runEvent); // Elemen belüli egétr mozgatást érzékeli ez az event
+
+
+// keydown
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+var select = document.querySelector('select');
+
+//itemInput.addEventListener('keydown', runEvent); // amikor lenyomjuk a gombot
+//itemInput.addEventListener('keyup', runEvent);  // amikor felengedjük a gombot lenyomás után
+//itemInput.addEventListener('keypress', runEvent);  // szimplán amikor megnyojuk a gombot
+
+
+
+// Input 
+
+//itemInput.addEventListener('focus', runEvent); // input mezőbe kattintunk akkor kapja meg afocus állapotot, és ezzel azt kezeljük
+//itemInput.addEventListener('blur', runEvent); // amikor kilépünk a focus állapotból
+
+//itemInput.addEventListener('cut', runEvent); // amikor vágólapra helyezzük a kivágott szöveget
+//itemInput.addEventListener('copy', runEvent); // amikor kimásolunk valamit a vágóasztalra
+//itemInput.addEventListener('paste', runEvent); //amikor a vágóasztalban tárolt adatot bemásoljuk a kijelölt elmebe
+
+//itemInput.addEventListener('input', runEvent); // bármit amit csinálsz az inputba (press,cut,copy...), azt figyeli ez az event
+
+
+// Select
+
+select.addEventListener('change',runEvent);  // Amikor értéket váltunk a select input mezőben
+select.addEventListener('input',runEvent);  // Ennél is működik az input event
+
+form.addEventListener('submit', runEvent);  // Amikor a 'submit'-al elküldjük a formot
+
+function runEvent(e) {
+    
+    e.preventDefault();
+    console.log('EVENT TYPE: '+e.type);
+    /* 
+    console.log('EVENT TYPE: '+e.target.value);
+    document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
+    */
+   // output.innerHTML = '<h3>MouseX: '+e.offsetX+' </h3><h3>MouseY: '+e.offsetY+'</h3>';
+
+   // box.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+",40)";
+}
